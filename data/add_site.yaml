@@ -1,0 +1,13 @@
+- title: 用户创建站点
+  module: site
+  step: 登录用户账号,点击站点,点击创建,输入所有正确必填信息,点击确定
+  data:
+    email: otto@mail2.dev.fs77.net
+    password: qq2000
+    domain: killer.cdn.dev.fs77.net
+    return_address: 45.65.44.28
+    ipaddress: killer.cdn.dev.fs77.net
+    open_url: http://killer.cdn.dev.fs77.net
+
+
+

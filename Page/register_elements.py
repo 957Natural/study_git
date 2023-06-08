@@ -1,0 +1,15 @@
+class Register:
+    register_url = 'mx.mail2.dev.fs77.net/mail'
+    test_email = '#rcmloginuser'
+    test_password = '#rcmloginpwd'
+    test_login_button = '#rcmloginsubmit'
+    register_email = '#email'
+    register_password = '#password'
+    register_yes_password = '#password2'
+    register_check_agreement = '//label[@class="ant-checkbox-wrapper"]/span[text()=" 我已阅读并同意"]'
+    register_click_button = '//*[@id="formRegister"]/div[6]/div/div/span/button/span'
+    select_email = '//tbody/tr/td[2]/span[text()="Today 15:26"]'
+    activation = '//div/table/tbody/tr/td[2]/div/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/table/tbody/tr/td/a'
+    sucess = '//div/div[text()="激活成功"]'
+    button = '//*[@id="userLayout"]/div/div[2]/div[3]/button/span'
+
