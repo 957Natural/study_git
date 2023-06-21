@@ -1,5 +1,5 @@
 class AddRole:
-    role_click = '//div/span/span/span[text()="账户"]'
+    role_click = '//body/div[1]/section[1]/aside/div/ul[@role="menu"]/li[4]/div/span/span'
     role_role_group = '//section/aside/div/ul/li[4]/ul/li[5]/a[@href="/setting/subRoleMgr/list"]'
     role_add = '//section/section/main/div/div/div/div[2]/div/div/div/div[2]/a/button'
     role_name = '#name'
@@ -12,6 +12,7 @@ class AddRole:
     role_assert_alert2 = '//*[@id="app"]/section/section/main/div/div/div/div[2]/div/div/div/div[1]/span[@class="ant-alert-message"][text()="成功！"]'
     role_submit_alert = '//div/div[@role="tooltip"]/div/div/div[text()="是否要删除此行？"]'
     role_submit2 = '/html/body/div[2]/div/div/div/div[2]/div/div[2]/button[2]'
+    role_logout = '/html/body/div[5]/div/div/ul[@role="menu"]/li[4]'
 
 class AddRoleResources:
     role_click_message = '//div/div/div/div[2]/div/div/div/div[3]/div/div/div/div/div/table/tbody/tr/td[6]/span/a[2]'
@@ -29,6 +30,12 @@ class AddRoleResources:
     role_click_input = '//div/div[@role="combobox"]/div/div[text()="角色"]'
     role_account_submit = '//div[@class="ant-modal-content"]/div[3]/div/button[2]'
     role_click_alert = '//div[@class="ant-modal-content"]/div[1]/div[text()="绑定角色"]'
-
+    role_delete = '//div[@class="ant-card-body"]/div[3]/div/div/div/div/div/table/tbody/tr[1]/td[6]/span/a[3]'
     role_assert_success = '//div[@class="ant-message"]/span/div/div/div/span[text()="绑定成功"]'
     role_account_back = '//div[@class="ant-modal-content"]/div[3]/div/button[1]'
+    role_clear_datas = '//body/div[2]/div/div/div/div[@role="tooltip"]/div/div[2]/button[2]'
+    role_clear_assert = '//section/main/div/div/div/div[2]/div/div/div/div[1]/span[1][text()="成功！"]'
+    role_delete2 = '//div[@class="ant-card"]/div/div[1]/form/div[1]/div/div/div/div/span/input[@placeholder="邮箱"]'
+    role_clear_select = '//div[@class="ant-card"]/div/div[1]/form/div[@class="ant-row"]/div[2]/button'
+    role_clear_datas2 = '//div[@class="ant-table-body"]/table/tbody/tr[1]/td[8]/span/a[3]'
+    role_clear_button = '//body/div[2]/div/div/div/div/div/div[2]/button[2]'

@@ -31,7 +31,25 @@ def generate_random_code(length):
 
 # 创建角色成功
 def add_role_random(length):
-    datas = ['public@mail2.dev.fs77.net', 'qq2000']
+    datas = ['page@mail2.dev.fs77.net', 'qq2000']
+    datas2 = []
+    all_chars = string.ascii_letters + string.digits
+    code = ''.join(random.choices(all_chars, k=length))
+    code2 = ''.join(random.choices(all_chars, k=length))
+    code3 = ''.join(random.choices(all_chars, k=length))
+    code3 += '@mail2.dev.fs77.net'
+    datas.append(code)
+    datas.append(code2)
+    datas.append(code3)
+    datas.append(str(random.randint(1, 10)))
+    datas.append(str(random.randint(1, 10)))
+    datas.append(str(random.randint(1, 10)))
+    datas2.append(datas)
+    return datas2
+
+# 创建角色并验证为角色添加功能可以使用
+def add_role_random02(length):
+    datas = ['home@mail2.dev.fs77.net', 'qq2000']
     datas2 = []
     all_chars = string.ascii_letters + string.digits
     code = ''.join(random.choices(all_chars, k=length))
@@ -83,6 +101,7 @@ def add_account_false_ramdom(length):
     datas.append(code3)
     datas.append(code4)
     datas2 = [datas]
+    print(datas2)
     return datas2
 
 # 登录失败(邮箱格式错误)
@@ -103,15 +122,57 @@ def login_false2(length):
     datas2 = [datas]
     return datas2
 
-# 复杂场景if条件判断
-def isElementExist(self, element):
-    flag = True
-    try:
-        self.driver.find_element(element)
-        return flag
-    except:
-        flag = False
-        return flag
+# 创建站点
+def add_site(length):
+    datas = ['beat@mail2.dev.fs77.net', 'qq2000']
+    all_chars = string.ascii_letters + string.digits
+    code = ''.join(random.choices(all_chars, k=length))
+    code += '.cdn.dev.fs77.net'
+    code3 = ''.join(random.choices(all_chars, k=length))
+    code3 += '.cdn.dev.fs77.net'
+    datas.append(code)
+    datas.append('45.65.44.31')
+    datas.append(f'http://{code}')
+    datas2 = [datas]
+    print(datas2)
+    return datas2
+
+
+# 添加站点黑白名单
+def site_config(length):
+    datas = ['page@mail2.dev.fs77.net', 'qq2000']
+    all_chars = string.ascii_letters + string.digits
+    code = ''.join(random.choices(all_chars, k=length))
+    code += '.cdn.dev.fs77.net'
+    code3 = ''.join(random.choices(all_chars, k=length))
+    code3 += '.cdn.dev.fs77.net'
+    code2 = ''.join(random.choices(all_chars, k=length))
+    code2 += '.com'
+    datas.append(code)
+    datas.append('45.65.44.31')
+    datas.append(f'http://{code}')
+    datas.append(code2)
+    datas.append('白名单')
+    datas2 = [datas]
+    print(datas2)
+    return datas2
+
+
+# 创建子账户失败(密码不足6位)
+def sub_account_false(length, length2):
+    datas = ['home@mail2.dev.fs77.net', 'qq2000']
+    all_chars = string.ascii_letters + string.digits
+    code = ''.join(random.choices(all_chars, k=length))
+    code += '@mail2.dev.fs77.net'
+    code3 = ''.join(random.choices(all_chars, k=length2))
+    datas.append(code)
+    datas.append(code3)
+    datas.append(random.randint(1, 100))
+    datas.append(random.randint(1, 50))
+    datas.append(random.randint(1, 10))
+    datas2 = [datas]
+    return datas2
+
 
 
 

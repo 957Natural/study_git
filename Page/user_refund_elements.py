@@ -1,0 +1,13 @@
+class UserRefund:
+    recharge = '//div[@class="ant-layout-sider-children"]/ul/li[2]/div/span/span/span[text()="收费"]'
+    bill = '//ul[@role="menu"]/li[1][@role="menuitem"]/a[@href="/billing/invoice/list"]'
+    details = '//div[@class="ant-table-wrapper"]/div/div/div/div/div/table/tbody/tr[1]/td[6]/span/a'
+    refund_assert = '//div[@class="ant-descriptions-view"]/table/tbody/tr[1]/td/span[2]/strong[text()="服务成功"]'
+    refund_button = '//main/div/div/div/div[2]/div/div/div/div/div/div/div/button/span[text()="退 款"]'
+    refund_path = '//div[@class="ant-modal-root"]/div/div/div/div[2]/div/div/label[@title="退款路径"]'
+    refund_message = '//div[@role="document"]/div/div[2]/div[2]/div[2]/div/span/input[@placeholder="退款原因"]'
+    refund_determine = '//div[@role="document"]/div[2]/div[3]/div/button[2]'
+    refund_determine2 = '//div[@role="document"]/div[2]/div[3]/div/button[1]'
+    refund_back = '//div/ul[@role="menu"]/li[2]/ul/li[3]/a[@href="/billing/refundApplication/list"]'
+    refund_wait = '//table/tbody[@class="ant-table-tbody"]/tr[1]/td[6]/span[text()="等待"]'
+    refund_back2 = '//div/ul[@role="menu"]/li[2]/ul/li[2]/a[@href="/billing/balance"]'

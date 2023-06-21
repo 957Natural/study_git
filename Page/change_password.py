@@ -4,5 +4,5 @@ class ChangePassword:
     original = '//input[@placeholder="原密码"]'
     new_password = '//input[@placeholder="至少6位密码，区分大小写"]'
     confirm_password = '//input[@placeholder="确认密码"]'
-    submit = '//main/div[@class="ant-pro-basicLayout-children-content-wrap"]/div/div/div[2]/div/div/div/div/div/form/div[4]/div/div/span/button'
+    submit = '//div[@class="ant-row"]/div/form/div[5]/div/div/span/button'
     password_alert = '//div[@data-show="true"]/span[text()="修改成功"]'

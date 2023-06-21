@@ -1,12 +1,10 @@
-from _pytest.pytester import pytester
-
 
 class EleSite:
     url = 'https://dashboard.rootdevx.com'
     email = '#name'
     password = '#password'
     login_button = '//*[@id="formLogin"]/div[3]/div/div/span/button/span'
-    site = '//div/span/span/span[text()="站点"]'
+    site = '//body/div[1]/section[1]/aside/div/ul[@role="menu"]/li[3]/div/span/span'
     site_add = '//*[@id="app"]/section/aside/div/ul/li[3]/ul/li[2]/a/span'
     taocan = '//div[@id="planId"]'
     default = '//div/ul[@role="listbox"]/li[@role="option"][text()="默认套餐 "]'
@@ -26,4 +24,10 @@ class EleSite:
     site_modify = '//div/div/div/ul/li[2][text()="测试暂停套餐 "]'
     site_yes = '//form/div[13]/div/div/span/button'
     site_faild = '//span[@class="ant-alert-message"][text()="提示！"]'
-
+    site_details = '//div[@class="ant-spin-nested-loading"]/div/div/div/div/table/tbody/tr[1]/td[9]/span/a[1]'
+    site_assert = '//div[@class="ant-pro-page-header-wrap"]/div[2]/div/div/div/div/div/div/span[@class="ant-alert-message"]'
+    site_link = '//ul[@role="menu"]/li[3]/ul[@role="menu"]/li[@role="menuitem"][1]/a[@href="/siteMgr/list"]'
+    site_clear = '//div[@class="ant-table-body"]/table/tbody/tr[1]/td[9]/span/a[2]'
+    site_delete_alert = '//body/div[2]/div/div/div/div/div/div/div[text()="是否要删除此行？"]'
+    site_clear_button = '//body/div[2]/div/div/div/div[2]/div/div[2]/button[2]'
+    site_assert_success = '//div/div/div[2]/div/div/div/div[1]/span[1]'

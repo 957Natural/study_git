@@ -1,0 +1,16 @@
+testcase/test_site_configuration.py::UserRegister::test_site_config_black_4
+--------------------------------------------------------------------
+Last Page: https://dashboard.rootdevx.com/siteMgr/detail?id=462
+ Duration: 22.19s
+  Browser: Chrome 114.0.5735.134
+   Driver: chromedriver 114.0.5735.90
+Timestamp: 1687320119  (Unix Timestamp)
+     Date: Wednesday, 21 June 2023
+     Time: 12:01:59 PM  (中国标准时间, UTC+08:00)
+--------------------------------------------------------------------
+Traceback:
+  File "C:\python\lib\site-packages\parameterized\parameterized.py", line 620, in standalone_func
+    return func(*(a + p.args), **p.kwargs, **kw)
+  File "D:\iu\SeleniumBase\testcase\test_site_configuration.py", line 114, in test_site_config_black
+    if datas[6] == '白名单':
+Exception: tuple index out of range

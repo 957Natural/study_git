@@ -1,12 +1,14 @@
+
 import allure
 from seleniumbase import BaseCase
-from Page.register_elements import Register
 from utils.ele_login import *
 from parameterized import parameterized
 from utils.read_random import *
+from Page.user_refund_elements import *
+
 @allure.feature('Loadproxy用户测试')
-@allure.story('用户注册模块')
-class UserRegister(BaseCase):
+@allure.story('用户退款模块')
+class UserRecharge(BaseCase):
     def isElementExist(self, element):
         flag = True
         try:
@@ -70,40 +72,45 @@ class UserRegister(BaseCase):
                             self.wait_for_element(EleLogin.language_assert)
                             self.assert_text('登录', EleLogin.language_assert)
 
-
-    @parameterized.expand([generate_random_code(6),
-                           generate_random_code(6),
-                           generate_random_code(5),
-                           generate_random_code(5),
-                           generate_random_code(4),
-                           generate_random_code(4),
-                           generate_random_code(3),
-                           generate_random_code(3),
-                           generate_random_code(2),
-                           generate_random_code(2),
-                           generate_random_code(7),
-                           generate_random_code(7),
-                           generate_random_code(9),
-                           generate_random_code(11),
-                           generate_random_code(17),
-                           generate_random_code(18)])
-    @allure.title('注册成功(随机数邮箱长度)')
-    def test_user_register(self, datas):
-        with allure.step('点击注册'):
+    @parameterized.expand(
+        [[('monkey@mail2.dev.fs77.net', 'qq2000', 'test',)],
+         [('public@mail2.dev.fs77.net', 'qq2000', 'test',)],
+         [('freestyle@mail2.dev.fs77.net', 'qq2000', 'test',)],
+         [('2407114348@mail2.dev.fs77.net', 'qq2000', 'test',)],
+         [('hey@mail2.dev.fs77.net', 'qq2000', 'test')],
+         [('jynivavu@mail2.dev.fs77.net', 'qq2000', 'test')],
+         [('kahilu@mail2.dev.fs77.net', 'qq2000', 'test')]])
+    @allure.title('用户退款成功')
+    def test_user_refund110(self, datas):
+        with allure.step('输入用户邮箱密码,点击登录'):
             self.wait_for_element(EleLogin.email)
-            self.click_link_text('注册')
-            self.wait_for_element(Register.register_email)
-        with allure.step(f'输入随机数邮箱:{datas[0]}, 输入密码:{datas[1]}, 输入确认密码:{datas[1]}'):
-            self.type(Register.register_email, datas[0])
-            self.assert_text(datas[0], Register.register_email)
-            self.type(Register.register_password, datas[1])
-            self.assert_text(datas[1], Register.register_password)
-            self.type(Register.register_yes_password, datas[1])
-            self.assert_text(datas[1], Register.register_password)
-        with allure.step('勾选我已阅读协议'):
-            self.hover_and_click(Register.register_check_agreement, Register.register_check_agreement)
-        with allure.step('点击确定注册'):
-            self.wait_for_element(Register.register_click_button)
-            self.click(Register.register_click_button)
-
+            self.type(EleLogin.email, datas[0])
+            self.type(EleLogin.password, datas[1])
+            self.click(EleLogin.login_button)
+        with allure.step('点击账单,选择需要退款的账单,点击详情,点击退款'):
+            self.wait_for_element_visible(UserRefund.recharge)
+            self.click(UserRefund.recharge)
+            self.hover_and_click(UserRefund.bill, UserRefund.bill)
+            self.hover_on_element(UserRefund.details)
+            self.click_if_visible(UserRefund.details)
+            self.wait_for_element_visible(UserRefund.refund_assert)
+        with allure.step('断言退款的订单状态为服务成功'):
+            self.assert_text('服务成功', UserRefund.refund_assert)
+            self.hover_on_element(UserRefund.refund_button)
+            self.click_if_visible(UserRefund.refund_button)
+            self.wait_for_element_visible(UserRefund.refund_path)
+            self.assert_element_visible(UserRefund.refund_path)
+            self.type(UserRefund.refund_message, datas[2])
+            self.hover_on_element(UserRefund.refund_determine)
+        with allure.step('点击确认退款'):
+            self.click_if_visible(UserRefund.refund_determine)
+            self.hover_and_click(UserRefund.refund_determine2, UserRefund.refund_determine2)
+            self.hover_on_element(UserRefund.refund_back2)
+            self.click_if_visible(UserRefund.refund_back2)
+            self.hover_on_element(UserRefund.refund_back)
+            self.click_if_visible(UserRefund.refund_back)
+        with allure.step('断情确认退款后,新增的退款申请状态为等待'):
+            self.wait_for_element_visible(UserRefund.refund_wait)
+            self.assert_element_visible(UserRefund.refund_wait)
+            self.assert_text('等待', UserRefund.refund_wait)
 

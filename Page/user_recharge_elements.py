@@ -1,5 +1,6 @@
 class UserMoney:
-    recharge_charge = '//div/span/span/span[text()="收费"]'
+
+    recharge_charge = '//body/div[1]/section[1]/aside/div/ul/li[2]/div/span/span/span'
     recharge_balance = '余额'
     recharge_amount = '#amount'
     recharge_submit = '//section/section/main/div/div/div/div[2]/div/div/div/div[3]/div/form[1]/div[3]/div/div/span/button'
@@ -22,18 +23,19 @@ class UserMoney:
     recharge_else_button = '//div[@class="ant-row"]/div/div/div[5]/div[2]/div/span/button[@role="switch"]'
     recharge_why_button2 = '#stripe_payment_confirm_button'
     recharge_label = '//div[@class="ant-row"]/div/div/div/div[3]/div/label[@title="卡安全码"]'
+    recharge_assert_success = '//main/div/div/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div/div[2][text()="支付成功"]'
 
 
 
 
 class UserBalanceRemind:
-    recharge_remind = '//div/label[@title="余额不足提醒阀值 (美元)"]'
+    recharge_remind = '//div[@class="ant-card-body"]/div[3]/div/form[2]/div/div/label[@for="remindAmount"]'
     recharge_input = '//div/input[@role="spinbutton"]'
     recharge_remind_submit = '//section/section/main/div/div/div/div[2]/div/div/div/div[3]/div/form[2]/div[3]/div/div/span/button'
     recharge_assert_submit = '//div/span[@class="ant-alert-message"][text()="成功！"]'
 
 class UserPayPal:
-    Paypal_button = '//div[@data-testid="layout-wrapper-billing"]/div/main/div/div//button'
+    Paypal_button = '//div[@id="root"]/div/div[1]/main/div[1]/div[1]/button'
     Paypal_message = '//div[@data-testid="layout-wrapper-billing"]/div/main/div/div[1]/p'
     Paypal_email_if = '#emailSubTagLine'
     Paypal_password_if = '//div[@class="profileRememberedEmail"]/span[@class="profileDisplayEmail notranslate"]'
@@ -45,17 +47,22 @@ class UserPayPal:
     Paypal_input_password = '#login_password'
     Paypal_login_button = '#btnLogin'
     Paypal_login_if = '//section[@id="login"]/div/div/h1[@id="headerText"]'
-    Paypal_payment = '//div[@id="root"]/div/div/div/main/div/section/div/h2[text()="付款方式"]'
+    Paypal_payment = '//div[@id="root"]/div/div/div/main/div/section/div/h2'
     Paypal_payment_submit = '//div[@id="root"]/div/div/div/main/div[3]/div/button[@id="payment-submit-btn"]'
     Paypal_assert = '//div[@class="ant-row"]/div/div/div[2]/div/div[4]/a/button/span'
-    Paypal_assert_success = '//div[@class="ant-card"]/div/div/div/div/div/div[2]/div/div[3]/div[text()="支付状态"]'
+    Paypal_assert_success = '//div[@class="ant-card"]/div/div/div/div/div/div[2]/div/div[3]/div'
 
 class UserAlipay:
     Alipay_if = '//div[@class="topbar"]/div/span[text()="你好，欢迎使用支付宝付款！"]'
     Alipay_if2 = '//div[@id="teLogin"]/div/div/div[2]/div/div[1]/label'
     Alipay_username = '#J_tLoginId'
     Alipay_password = '#payPasswd_rsainput'
-    Alipay_next_button = '#J_newBtn'
+    Alipay_next_button = '#J_foreAgreement'
     Alipay_payment_password = '#payPassword_rsainput'
-    Alipay_forget_password = '//div[@data-system="cashier"]/div/div/span[3]/a'
+    Alipay_forget_password = '//div[@data-system="cashier"]/div/div/span[3]/a[@seed="sc_edit_forgetPwd"]'
     Alipay_confirm_password = '#J_authSubmit'
+    Alipay_pay_password = '//div/label[@for="payPassword"]'
+    Alipay_success = '//div[@id="container"]/div[@id="main"]/div/div/div/a[@href="https://lab.alipaydev.com/consume/record/index.htm"]'
+    Alipay_result_title = '//div[@class="ant-card"]/div/div/div/div/div[2]/div/div[2][@class="ant-result-title"]'
+    Alipay_result_title2 = '//div[@id="container"]/div[2]/div/div/h3[text()="交易付款成功，正在跳转至商户页面"]'
+    Alipay_false_wait = '//div[@id="container"]/div[@class="notice n-error"]/h3'
